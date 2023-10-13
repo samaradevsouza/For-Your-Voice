@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial - For Your Voice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="fyvc.svg" alt="icon" id="icon">
+        <a href="index.html">página inicial</a>
+        <img src="estrela.svg" alt="estrelinha" class="estrelinha">
+        <a href="linhasdeajuda.html">linhas de ajuda</a>
+        <img src="estrela.svg" alt="estrelinha" class="estrelinha">
+        <a href="doacoes.html">doações</a>
+        <img src="estrela.svg" alt="estrelinha" class="estrelinha">
+        <a href="contatos.html">contatos</a>
+        <img src="prideflag.webp" alt="bandeirinha" id="bandeirinha">
+    </header>
+
+    <div id="body">
+        <div id="sobre">
+            <center><img src="Nosso Projeto.svg" id="nosso-projeto">
+
+            <div class="image-slideshow" id="sobre-slide">
+                <div class="image fade">
+                    <img src="/carrossel-texto/1.png" alt="Mountain Top">
+                </div>
+                <div class="image fade">
+                    <img src="/carrossel-texto/2.png" alt="Palm Trees">
+                </div>
+                <div class="image fade">
+                    <img src="/carrossel-texto/3.png" alt="Neon Sign">
+                </div>
+                <div class="image fade">
+                    <img src="/carrossel-texto/4.png" alt="Neon Sign">
+                </div>
+                <div class="image fade">
+                    <img src="/carrossel-texto/5.png" alt="Neon Sign">
+                </div>
+                <div class="image fade">
+                    <img src="/carrossel-texto/6.png" alt="Neon Sign">
+                </div>
+            </div></center>
+        </div>
+
+        <div class="slider" id="main-slider">
+            <div class="slider-wrapper">
+                <img src="/carrossel/img1.png" alt="First" class="slide">
+                <img src="/carrossel/img2.png" alt="Second" class="slide">
+                <img src="/carrossel/img3.png" alt="Third" class="slide">
+                <img src="/carrossel/img4.png" alt="Forth" class="slide">
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <center><a href="marketplace" id="marketplace-button">MARKETPLACE</a></center>
+
+
+        <footer>
+            <table>
+                <tr>
+                    <td><a href="brunno.html" class="footer">Brunno Dias</a></td>
+                    <td><a href="danielly.html" class="footer">Danielly Lima</a></td>
+                    <td><a href="david.html" class="footer">David Aires</a></td>
+                    <td><a href="leticia.html" class="footer">Letícia Sena</a></td>
+                    <td><a href="samara.html" class="footer">Samara de Souza</a></td>
+                </tr>
+                <tr>
+                    <td><a href="linhasdeajuda.html" class="footer">Linhas de ajuda</a></td>
+                    <td><a href="contatos.html" class="footer">Contatos</a></td>
+                    <td><a href="marketplace.html" class="footer">Marketplace</a></td>
+                    <td><a href="doacoes.html" class="footer">Doações</a></td>
+                    <td><a href="index.html" class="footer">Página inicial</a></td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+<script>
+    let index = 0;
+    displayImages();
+    function displayImages() {
+        let i;
+        const images = document.getElementsByClassName("image");
+        for (i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+        index++;
+        if (index > images.length) {
+            index = 1;
+        }
+        images[index - 1].style.display = "block";
+        setTimeout(displayImages, 4000);
+    }
+
+    (function () {
+
+        function Slideshow(element) {
+            this.el = document.querySelector(element);
+            this.init();
+        }
+
+        Slideshow.prototype = {
+            init: function () {
+                this.wrapper = this.el.querySelector(".slider-wrapper");
+                this.slides = this.el.querySelectorAll(".slide");
+                this.previous = this.el.querySelector(".slider-previous");
+                this.next = this.el.querySelector(".slider-next");
+                this.index = 0;
+                this.total = this.slides.length;
+                this.timer = null;
+
+                this.action();
+                this.stopStart();
+            },
+            _slideTo: function (slide) {
+                var currentSlide = this.slides[slide];
+                currentSlide.style.opacity = 1;
+
+                for (var i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides[i];
+                    if (slide !== currentSlide) {
+                        slide.style.opacity = 0;
+                    }
+                }
+            },
+            action: function () {
+                var self = this;
+                self.timer = setInterval(function () {
+                    self.index++;
+                    if (self.index == self.slides.length) {
+                        self.index = 0;
+                    }
+                    self._slideTo(self.index);
+
+                }, 3000);
+            },
+            stopStart: function () {
+                var self = this;
+                self.el.addEventListener("mouseover", function () {
+                    clearInterval(self.timer);
+                    self.timer = null;
+
+                }, false);
+                self.el.addEventListener("mouseout", function () {
+                    self.action();
+
+                }, false);
+            }
+
+
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var slider = new Slideshow("#main-slider");
+
+        });
+
+
+    })();
+
+</script>
+
+</html>

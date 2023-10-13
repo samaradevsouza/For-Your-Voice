@@ -1,0 +1,193 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: url(upper\ corner.png) no-repeat top right, url(bottom\ corner.png) no-repeat bottom left;
+}
+
+
+
+@font-face {
+    font-family: "Kenao";
+    src:
+        local("Kenao"),
+        url("Kenao.otf");
+}
+
+header {
+    margin-top: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+#icon {
+    height: 100px;
+}
+
+.estrelinha {
+    height: 40px;
+    margin-top: 20px;
+}
+
+header a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 15px;
+    font-size: 17pt;
+    margin-top: 27px;
+    background: radial-gradient(50% 50% at 50% 50%, #D6006F 0%, #724E94 53.13%, #0038A7 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    ;
+}
+
+header a:hover {
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.253), 0 0 5px #ffffff;
+}
+
+
+#body {
+    display: flex;
+    /* margin-top: 50px; */
+}
+
+#sobre {
+    width: 50%;
+    /* margin: 50px; */
+    /* margin-left: 30px; */
+    margin-bottom: 75px;
+    margin-top: 85px;
+}
+
+#nosso-projeto {
+    width: 20rem;
+}
+
+#sobre p {
+    font-size: 20px;
+    text-align: justify;
+    width: 600px;
+    align-items: center;
+    height: 470px;
+}
+
+.image-slideshow {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+#sobre-slide img {
+    width: 400pt;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .5
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.slider {
+    width: 1024px;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.slide {
+    float: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 3s linear;
+}
+
+.slider-wrapper>.slide:first-child {
+    opacity: 1;
+}
+
+#main-slider {
+    margin-right: 50px;
+}
+
+#marketplace-button {
+    border: 1px solid black;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 17pt;
+}
+
+#markeplace-button:hover {
+    background-color: red;
+}
+
+#main-slider img {
+    height: 700px;
+    border-radius: 20px;
+}
+
+#bandeirinha {
+    height: 50px;
+    margin-top: 25px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+footer a {
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(180deg, #E40303 0%, #FF8C00 22.4%, #FFED00 39.06%, #007F26 57.81%, #004DFF 79.17%, #750787 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin: 15px;
+    font-size: 17pt;
+}
+
+#background {
+    margin: 0%;
+}
+
+.footer {
+    font-size: 10pt;
+    margin: 0%;
+    margin: 15px;
+}
+
+#bottom {
+    margin-top: 70px;
+}
