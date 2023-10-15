@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    
+
     <header>
         <img src="icon-fyv-doacoes.svg" alt="icon" id="icon">
         <a href="index.html">página inicial</a>
@@ -25,20 +27,21 @@
         <img src="prideflag.png" alt="bandeirinha" id="bandeirinha">
     </header>
     </head>
-        <body>
-                <div class="container">
-                    <div class="form-section">
-                        <h2>Dados Pessoais</h2>
-                        <form>
-                          <div class="form">
-                            <label for="nome">Nome: </label>
-                            <input type="text" id="nome" name="nome"><br><br>
-                            <label for="data">Data de Nascimento: </label>
-                            <input type="date" id="data" name="data"><br><br>
-                            <label for="email_login">E-mail: </label>
-                            <input id="email_login" name="email_login" required="required"><br></br>
-                                <div class="btn" style="padding-top: 1px;">
-                                    <a href="doacoes3.html" style="
+
+    <body>
+        <div class="container">
+            <div class="form-section">
+                <h2>Dados Pessoais</h2>
+                <form>
+                    <div class="form">
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="nome" name="nome"><br><br>
+                        <label for="data">Data de Nascimento: </label>
+                        <input type="date" id="data" name="data"><br><br>
+                        <label for="email_login">E-mail: </label>
+                        <input id="email_login" name="email_login" required="required"><br></br>
+                        <div class="btn" style="padding-top: 1px;">
+                            <a href="doacoes3.html" style="
                                     margin-top: 40px;
                                     background:  #9AE9C4;
                                     padding: 20px 70px;
@@ -52,58 +55,63 @@
                                     letter-spacing: 1px;
                                     word-spacing: 3px;
                                     outline: none;">Próximo</a>
-                        </form>
-                      </div>
-               
-            
-                   
-                          </div>
-                        </form>
-                    </div>
-                </div>         
-    <footer style="margin-top: 5em;">
-        <table>
-            <tr>
-                <td><a href="brunno.html" class="footer">Brunno Dias</a></td>
-                <td><a href="danielly.html"class="footer">Danielly Lima</a></td>
-                <td><a href="david.html"class="footer">David Aires</a></td>
-                <td><a href="leticia.html"class="footer">Letícia Sena</a></td>
-                <td><a href="samara.html"class="footer">Samara de Souza</a></td>
-            </tr>
-            <tr>
-                <td><a href="linhasdeajuda.html"class="footer">Linhas de ajuda</a></td>
-                <td><a href="contatos.html"class="footer">Contatos</a></td>
-                <td><a href="marketplace.html"class="footer">Marketplace</a></td>
-                <td><a href="doacoes.html" class="footer">Doações</a></td>
-                <td><a href="index.html" class="footer">Página inicial</a></td>
-            </tr>
-        </table>  
-    </footer>
-</body>
-<script>
-  let currentPage = 1;
-  showPage(currentPage);
+                </form>
+            </div>
 
-  function nextPage() {
-      if (currentPage < 4) {
-          currentPage++;
-          showPage(currentPage);
-      }
-  }
 
-  function prevPage() {
-      if (currentPage > 1) {
-          currentPage--;
-          showPage(currentPage);
-      }
-  }
 
-  function showPage(pageNumber) {
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => {
-          page.classList.remove('visible');
-      });
+        </div>
+        </form>
+        </div>
+        </div>
+        <footer>
+            <table>
+                <tr>
+                    <td><a href="brunno.html" class="footer">Brunno Dias</a></td>
+                    <td><a href="danielly.html" class="footer">Danielly Lima</a></td>
+                    <td><a href="david.html" class="footer">David Aires</a></td>
+                    <td><a href="leticia.html" class="footer">Letícia Sena</a></td>
+                    <td><a href="samara.html" class="footer">Samara de Souza</a></td>
+                </tr>
+                <tr>
+                    <td><a href="linhasdeajuda.html" class="footer">Linhas de ajuda</a></td>
+                    <td><a href="contatos.html" class="footer">Contatos</a></td>
+                    <td><a href="marketplace.html" class="footer">Marketplace</a></td>
+                    <td><a href="doacoes.html" class="footer">Doações</a></td>
+                    <td><a href="index.html" class="footer">Página inicial</a></td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+    <script>
+        let currentPage = 1;
+        showPage(currentPage);
 
+        function nextPage() {
+            if (currentPage < 4) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        function showPage(pageNumber) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('visible');
+            });
+
+            const currentPageElement = document.getElementById('page' + pageNumber);
+            currentPageElement.classList.add('visible');
+        }
+    </script>
+</html>
       const currentPageElement = document.getElementById('page' + pageNumber);
       currentPageElement.classList.add('visible');
   }
