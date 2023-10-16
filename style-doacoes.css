@@ -1,6 +1,7 @@
 body {
     font-family: 'Nunito', sans-serif;
-    background: url(background-doacoes.svg) no-repeat left bottom;
+    background: url(background-doacoes.svg) no-repeat;
+    background-size: 71%;
 }
 
 @font-face {
