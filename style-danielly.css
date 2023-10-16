@@ -42,7 +42,7 @@ header a {
 }
 
 header a:hover {
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.253), 0 0 5px #ffffff;
+    text-shadow: 0 5px #ffffff;
 }
 
 #icon {
